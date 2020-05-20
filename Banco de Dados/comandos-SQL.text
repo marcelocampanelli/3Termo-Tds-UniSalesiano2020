@@ -1,0 +1,45 @@
+--Criar tabela(Paciente)
+CREATE TABLE paciente (
+			prontuario int (7) not null PRIMARY KEY,
+                       nomepaciente varchar(40) not null,
+                       rgpaciente varchar(15),
+                       datanasc_paciente date
+);
+
+--Criar tabela(medico) com auto incremento
+create table medico (
+    id_medico int(10) not null PRIMARY KEY AUTO_INCREMENT,
+    crm varchar(10) not null,
+	nome_medico varchar(30)    
+);
+
+--Apagar uma tabale(paciente2)
+DROP TABLE paciente2;
+
+--Inserir um registro na tabela(paciente)
+INSERT INTO paciente
+	VALUES	(1, 'Lucas','2659856-2','2001-07-20');
+
+insert into paciente(prontuario, rg_paciente, nomepaciente, datanasc_paciente)
+	VALUES	(2, '406584-9', 'Muriel', '2000-02-16');
+
+-- Executar uma consulta na base de dados
+select * from paciente;
+
+--Alterar um dado no banco de dados
+update paciente set rgpaciente = '1406584-9' where prontuario = 2;
+				        --ou where rg_paciente = '406584-9';
+	  			        --ou where nome_paciente = 'Muriel';
+
+--Apagar um  registro
+delete from paciente where prontuario = 1;
+
+--Criação da tabela consulta com a relação do paciente e medico com chave estrangeira
+create table consulta(ind_consulta 		int(8) not null PRIMARY KEY AUTO_INCREMENT,
+ 		      data_consulta     date not null,
+                      horario 			varchar(05),
+                      prontuario 		int(7) not null,
+                      FOREIGN key (prontuario) references paciente (prontuario),
+                      id_medico 		int(5) not null,
+                      FOREIGN key (id_medico) REFERENCES medico (id_medico)
+						);

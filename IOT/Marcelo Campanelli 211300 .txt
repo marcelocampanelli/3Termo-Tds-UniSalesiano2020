@@ -1,0 +1,29 @@
+int optico4n25 = 2;
+int pinoLDR = A0;  
+int limiteDisparo = 10;
+int sensorValue = 0;
+
+
+
+void setup() {
+  pinMode(optico4n25, OUTPUT); 
+  digitalWrite(optico4n25, LOW);
+  Serial.begin(9600); //INICIALIZA A SERIAL
+  pinMode(pinoLDR, INPUT); 
+}
+
+void loop() {
+sensorValue = analogRead(pinoLDR);
+  
+  
+  if (sensorValue < limiteDisparo) {
+      digitalWrite(optico4n25, HIGH);
+  }
+  else {
+      digitalWrite(optico4n25,LOW);
+  }
+  
+  Serial.print ("Leitura atual do sensor: ");
+  Serial.println(sensorValue);
+  delay(130);
+}

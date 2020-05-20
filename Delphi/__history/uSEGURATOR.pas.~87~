@@ -1,0 +1,190 @@
+unit uSEGURATOR;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Samples.Spin, Vcl.ExtCtrls, Vcl.Buttons;
+
+type
+  TACMESegurator = class(TForm)
+    pgcSeguratorMain: TPageControl;
+    tbsDados: TTabSheet;
+    grbVeiculo: TGroupBox;
+    edtDesc: TEdit;
+    lblDesc: TLabel;
+    edtPlaca: TEdit;
+    lblPlaca: TLabel;
+    edtCor: TEdit;
+    lblCor: TLabel;
+    spnAno: TSpinEdit;
+    lblAno: TLabel;
+    spnModelo: TSpinEdit;
+    lblModelo: TLabel;
+    cmbEstilo: TComboBox;
+    lblEstilo: TLabel;
+    lblTempoCarta: TLabel;
+    rdgTipoVeiculo: TRadioGroup;
+    rdgGaragem: TRadioGroup;
+    rdgCondutor: TRadioGroup;
+    rdgAlarme: TRadioGroup;
+    rdgPagamento: TRadioGroup;
+    rdgUso: TRadioGroup;
+    edtValorBase: TEdit;
+    lblValorBase: TLabel;
+    tbsValor: TTabSheet;
+    edtShowValorBase: TEdit;
+    lblShowValorBase: TLabel;
+    Label1: TLabel;
+    edtValorSeguroBase: TEdit;
+    lblValorSeguroBase: TLabel;
+    Label2: TLabel;
+    lblValorDesconto: TLabel;
+    edtValorDesconto: TEdit;
+    lblValorAcrescimo: TLabel;
+    lblValorSeguro: TLabel;
+    lblValorParce: TLabel;
+    edtAcrescimo: TEdit;
+    edtValorSeguro: TEdit;
+    edtValorParcela: TEdit;
+    bbtnNovoCalc: TBitBtn;
+    btnCalcular: TBitBtn;
+    btnLimpar: TBitBtn;
+    cmbTempoCarta: TComboBox;
+    procedure edtDescChange(Sender: TObject);
+    procedure edtPlacaChange(Sender: TObject);
+    procedure edtCorChange(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+    procedure btnCalcularClick(Sender: TObject);
+    procedure bbtnNovoCalcClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ACMESegurator: TACMESegurator;
+  acrescimo: double;
+  acrescimoEstilo: double;
+  acrescimoTempoCarta: double;
+  custoBase: double;
+  custoValorSeguroBase: double;
+  custoValorDescontos: double;
+  custoValorAcrescimos: double;
+  custoValorSeguro: double;
+  custoValorParcela: double;
+  desconto: double;
+  TotalTOTAL: double;
+  valorBase: double;
+
+implementation
+
+{$R *.dfm}
+
+procedure TACMESegurator.bbtnNovoCalcClick(Sender: TObject);
+begin
+  edtShowValorBase.Clear;
+  edtValorSeguroBase.Clear;
+  edtValorDesconto.Clear;
+  edtAcrescimo.Clear;
+  edtValorSeguro.Clear;
+  edtValorParcela.Clear;
+end;
+
+procedure TACMESegurator.btnCalcularClick(Sender: TObject);
+begin
+    valorBase := strToFloat(edtValorBase.Text);
+
+  case cmbEstilo.ItemIndex of
+    0: begin
+       acrescimo := acrescimo;
+    end;
+    1: begin
+      acrescimo := acrescimo + 0.02;
+    end;
+    2: begin
+      acrescimo := acrescimo + 0.05;
+    end;
+    3: begin
+      acrescimo := acrescimo + 0.08;
+    end;
+    4: begin
+      acrescimo := acrescimo;
+    end;
+
+  end;
+
+  //radioGroup
+  if rdgGaragem.ItemIndex <> 1  then acrescimo := acrescimo + 0.05;
+  if rdgAlarme.ItemIndex <> 1  then acrescimo := acrescimo + 0.05;
+  if rdgUso.ItemIndex <> 1  then acrescimo := acrescimo + 0.05;
+  if rdgCondutor.ItemIndex <> 1  then acrescimo := acrescimo + 0.05;
+
+  //idadeCarta
+   case cmbTempoCarta.ItemIndex of
+    0: begin
+       acrescimo := acrescimo + 0.12;
+    end;
+    1: begin
+      acrescimo := acrescimo + 0.10;
+    end;
+    2: begin
+      acrescimo := acrescimo + 0.08;
+    end;
+    3: begin
+      acrescimo := acrescimo + 0.12;
+    end;
+
+  end;
+
+
+  //descton
+
+  if rdgPagamento.ItemIndex = 0 then desconto := valorBase * 0.10;
+
+
+  edtValorParcela.Text := floatToStr(acrescimo);
+
+  TotalTOTAL :=( (valorBase * acrescimo) + valorBase) - desconto;
+  edtValorDesconto.Text := floatToStr(desconto);
+  edtValorSeguroBase.Text := floatToStr(TotalTOTAL);
+  edtShowValorBase.Text := EdtValorBase.Text;
+
+
+end;
+
+procedure TACMESegurator.btnLimparClick(Sender: TObject);
+begin
+  edtDesc.Clear;
+  edtCor.Clear;
+  edtPlaca.Clear;
+  spnAno.Value := 0;
+  spnModelo.Value := 0;
+  cmbEstilo.ItemIndex := -1;
+  edtValorBase.Clear;
+
+
+
+  btnLimpar.Enabled := false;
+end;
+
+procedure TACMESegurator.edtCorChange(Sender: TObject);
+begin
+  if edtCor.Text <> '' then  btnLimpar.Enabled := true;
+end;
+
+procedure TACMESegurator.edtDescChange(Sender: TObject);
+begin
+  if edtDesc.Text <> '' then  btnLimpar.Enabled := true;
+  cmbEstilo.Enabled := true;
+end;
+
+procedure TACMESegurator.edtPlacaChange(Sender: TObject);
+begin
+  if edtPlaca.Text <> '' then  btnLimpar.Enabled := true;
+end;
+
+
+end.

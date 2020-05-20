@@ -1,0 +1,147 @@
+Marcelo 211300 - Corretora
+*************************************CRIAÇÃO************************
+Tabela proprietario
+CREATE TABLE proprietario(
+	CpfProprietario int(15) not null PRIMARY KEY,
+    	DataNascimentoProprietario date,
+    	NomeProprietario varchar(30) not null,
+    	NomeMaeProprietario varchar(30) not null
+    
+);
+
+Tabela Imovel
+CREATE TABLE imovel(
+	CidadeImovel varchar(10) not null,
+    	CpfProprietario int(15) not null,
+    	FOREIGN KEY (CpfProprietario) REFERENCES proprietario (CpfProprietario),
+    	CepImovel int(15) not null,
+  	BairroImovel varchar(10) not null
+);
+
+Tabela Corretora
+CREATE TABLE corretora(
+    	CnpjCorretora int(15) not null PRIMARY KEY,
+    	EnderecoCorretora varchar(30),
+    	CepCorretora int(15) not null,
+    	CpfDono int(15) not null 
+);
+    
+    
+Tabela EquipeReforma
+	CREATE TABLE equipeReforma(
+	NomeEquipe varchar(50) not null,
+    	CnpjEquipe int(15) not null PRIMARY KEY
+);
+
+Tabela Inquilino
+CREATE TABLE inquilino(
+	CpfInquilino int(15) not null PRIMARY KEY,
+    	NomeInquilino varchar(30) not null,
+    	NomeMae varchar(30) not null
+);
+
+Tabela contrato
+
+CREATE TABLE contrato(
+	NumeroContrato int(10) not null PRIMARY KEY AUTO_INCREMENT,
+    	ResponsavelContrato varchar(30) not null,
+    	FOREIGN key (ResponsavelContrato) REFERENCES corretora (CnpjCorretora),
+    	CpfContratante int(15) not null,
+    	EmissorContrato varchar(30) not null,
+    	Contratante varchar(30) not null
+);
+    
+
+***********************PREENCHIMENTO********************************
+
+1 Proprietario
+
+INSERT INTO proprietario(
+   	CpfProprietario, 
+    	DataNascimentoProprietario,
+	NomeMaeProprietario,
+    	NomeProprietario )
+    
+VALUES (
+    	'123456789',
+	'1999-08-18',
+	'Isabel Campanelli',
+    	'Marcelo Campanelli');
+
+1 Imovel
+
+INSERT INTO imovel( 
+    BairroImovel,
+    CepImovel,
+    CidadeImovel,
+    CpfProprietario
+)
+    
+VALUES (
+   'Valdevino',
+    '18880',
+    'Valparaiso',
+    '123456789'
+);
+
+
+1 corretora
+
+INSERT INTO corretora( 
+    CnpjCorretora,
+    EnderecoCorretora,
+    CepCorretora,
+    CpfDono
+)
+    
+VALUES (
+	'010203',
+    	'Rua da saudade',
+    	'030201',
+    	'147852369'
+);
+
+1 equipe
+
+INSERT INTO equipereforma( 
+	CnpjEquipe,
+    	NomeEquipe
+)
+    
+VALUES (
+	'989596',
+   	'Pior que ta nao fica'
+);
+
+1 inquilino
+
+INSERT INTO inquilino( 
+	CpfInquilino,
+    	NomeInquilino,
+    	NomeMae
+)
+    
+VALUES (
+	'3632536',
+    	'Robservaldo Costa',
+    	'Deyde Costa'
+);
+
+1 contrato
+
+INSERT INTO contrato( 
+	Contratante,
+    CpfContratante,
+    EmissorContrato,
+    NumeroContrato,
+    ResponsavelContrato
+)
+    
+VALUES (
+	'Robservaldo Costa',
+    	'147852',
+    	'Willson Vai',
+    	'1',
+    	'010203'
+);
+

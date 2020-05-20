@@ -1,0 +1,46 @@
+<html>
+<head>
+<script type="text/javascript"
+        src="JS/jquery-3.4.1.min.js">
+</script>
+
+<script>
+ function enviar()
+ {
+var dadosForm = $('#dados').serialize();
+$.ajax({
+    url : "cadastrar.php",
+    type : 'post',
+    data : dadosForm,
+beforeSend : function(){
+    $("#mensagem").html("ENVIANDO..."); }
+})
+.done(function(dadosRecebidos){
+    $("#mensagem").html(dadosRecebidos);
+})
+.fail(function(jqXHR, textStatus, msg){
+    alert(msg);
+});
+
+
+}
+</script>
+
+
+</head>
+
+<body>
+<form id="dados">
+<center>
+        <label for= "nome">Nome:</label>
+        <input name= "nome"><br><br>
+        <label for= "email">Email:</label>
+        <input name= "email"><br><br>
+        <button onclick="enviar(); return false;">
+        Enviar</button>
+</center>
+</form>
+<center><div id="mensagem"></div></center>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+microprogramada é programação a nivel de hardware
+pipeline, enquanto processador processa uma informação, já busca outra instrução na memoria ram para ser executada logo em sequencia
+superescalar é de uma forma parelela, aonde vai dividindo seus processamentos.
+
+
+arquiteturas em nível ISA, não tem uma documentação(a nível hardware) específica para não haver chances de clonagens.
+PS: 
+
+documentos formal---
+Normativa: que impõem requisitos que devem ser atendidos na implementação
+Informativa: Que ajuda o leitor a entender os requisistos sem entrar na definição
+Teste: Conjunto de teste especificos para se verificar a implementação em relação a especificação formal.
+Esses documentos sempre tem, Modelo de memória adotado, quantos e quais registradores foram implementados, e oque cada instrução faz.
+
+Memórias, geralmente grupode de 4bytes (32bits) ou 8bytes(64bits)
+
+Palavras de 4 ou 8 bytes podem estar alinhadas ou nao com a memória ( em sequencia, ou não)
+alinhada ou não alinhada unica diferença é o modo de ler, aonde a alinhada é mais cara(mais lenta) e a não alinhada mais barata(mais rapida)
+
+Registradores
+Memória + rapida, geralmente dentro do processador, no nível ISA, alguns registradores são viseis para que o ISA possa os manipular. aonde esses registradores são microprogramados. Aonde popdem ser uso específico(ponteiro de pilha, o outros só usados pelo processador) e de uso gerais(uso geral do processador).
+os registradores são parte integrante da ULA, (unidade logica aritmética)
+responsavel por fazer operações matemáticas, e operações lógicas (OR AND)
+Ex: N = 1 qnd resultador for Negativo e por ai vai outros códigos... Z,V,C,A,P......
+
+O nivel ISA pode da suporte a algumas instruções da  ULA, como LOAD,STORE,MOVE,ADD,SUB,MULT,AND,OR,XOR,EQ,NEQ,LEQ,GOTO.....
+

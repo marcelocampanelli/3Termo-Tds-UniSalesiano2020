@@ -1,0 +1,22 @@
+int acionar = 8;
+int variavel = 0;
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  variavel = 0;
+  variavel = Serial.read();
+  
+  if (variavel != '1'){
+     variavel = 0;
+  	digitalWrite(acionar, LOW);
+  } else{   
+    variavel = 1;
+  	digitalWrite(acionar, HIGH);
+
+  }
+  
+}

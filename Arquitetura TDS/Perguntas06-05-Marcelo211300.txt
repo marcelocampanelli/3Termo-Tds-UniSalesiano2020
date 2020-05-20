@@ -1,0 +1,16 @@
+1- É o nível + próximo do hardware que o usuário pode programar, pois o código é traduzido para o nível do hardware(em bytes). Ou seja, o programados escreve em uma linguagem de alto nível (próxima a linguagem falada, por exemplo c#), e esse programa esse código é traduzido para um programa Objeto em uma linguagem intermediária (linguagem de máquina), aonde essas instruções é interpretada pelo hardware. A importancia do nível ISA é que com ele somos permitidos a enteder melhor o funcionamento interno do computador
+
+2- Normativa: que impõem requisitos que devem ser atendidos na implementação
+Informativa: Que ajuda o leitor a entender os requisistos sem entrar na definição
+Teste: Conjunto de teste especificos para se verificar a implementação em relação a especificação formal.
+
+3-Palavras de 4 ou 8 bytes podem estar alinhadas ou nao com a memória ( em sequencia, ou não)
+alinhada ou não alinhada unica diferença é o modo de ler, aonde a alinhada é mais cara(mais lenta) e a não alinhada mais barata(mais rapida)
+
+4- Memória + rapida, geralmente dentro do processador, no nível ISA, alguns registradores são viseis para que o ISA possa os manipular. aonde esses registradores são microprogramados. Aonde popdem ser uso específico(ponteiro de pilha, o outros só usados pelo processador) e de uso gerais(uso geral do processador).
+os registradores são parte integrante da ULA, (unidade logica aritmética)
+responsavel por fazer operações matemáticas, e operações lógicas (OR AND)
+Ex: N = 1 qnd resultador for Negativo e por ai vai outros códigos... Z,V,C,A,P......
+
+5- ASCII é de 0 a 127 UNICODE, já é bem maior no qual dentre dele tem o ASCII.
+Creio que não podem ser convertido, pois algumas instruções tem um tipo específico para ser tratadas.

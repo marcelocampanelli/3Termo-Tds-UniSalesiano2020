@@ -1,0 +1,17 @@
+		Resumo da palestra 15/05/2020
+
+Julio Lima
+
+Decidiu fazer TDS para fugir de português e Matématica. E chegou a conlusão que não conseguiria ser muito bom se não soubesses essas duas "matérias".
+Ele perseguiu por muito tempo o desenvolvimento de sistemas, mas em um certo momento encontrou a parte de teste de software.
+Chegou a conclusão que ela aprenderia muito mais, se começasse a ensinar, foi aonde ele começou a escrever artigos, workshops, palestras. E isso servio como um alavanque para ele.
+Deixou bem claro, a ideia que temos, que algumas matérias não pensamos ser importante, ele deixa bem claro que se não tivesse visto algumas matérias, não teria atingido o ponto que ele atingiu hoje.
+Deixou bem claro, que tudo oque aprendemos, praticamos e buscamos mais sobre, vai ter uma boa recompensa lá na frente, pois isso foi oque ele aprendeu ao decorrer de sua vida.
+Relatou sobre uma história sobre sua primeira aula no mestrado, aonde teve que programar um "formigueiro". 
+=> "Se você olhar para a natureza, você consegue encontrar resoluções para seus problemas."...
+Explicou parte de seus código que ele cita em seu artigo qe foi aceito no I3A (acho que é este o nome KKKK).
+Explicou oque é uma build, e seu funcionamento em um "versionamento de código", citou git como exemplo, e github como exemplo de armazenamento.
+Explicou o ponto de raciocinio por trás das build anomalas, que o trabalho dele é poupar horas, aonde entra o algoritmo de seleção negativa.Inpirado em um sistema imunológico humano, e a machine learning, ele foi capaz de identificar 99% dos erros em uma build, assim fazendo o desenvolvedor, poupar muito mais tempo em suas manutençoes de "erros". 
+
+
+Achei muito bom, a parte como ele deixou claro que tudo oque estudamos é usado em um certo momento. E abriu os olhos como temos coisas a + para estudarmos, para irmos atrás, e como o leque de opções vai muito além do que a gente imagina. É assustador quanto mais estudamos, mais encontramos coisas para estudar.

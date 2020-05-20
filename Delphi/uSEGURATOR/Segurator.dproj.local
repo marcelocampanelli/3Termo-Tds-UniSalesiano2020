@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.909,=C:\Users\Campanelli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.956,=C:\Users\Campanelli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.232,C:\Users\Campanelli\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Campanelli\Desktop\Aula Distancia\Delphi\uSEGURATOR.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.252,C:\Users\Campanelli\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Campanelli\Desktop\Aula Distancia\Delphi\uSEGURATOR.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.688,C:\Users\Campanelli\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Campanelli\Desktop\Aula Distancia\Delphi\Segurator.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.115,C:\Users\Campanelli\Desktop\Aula Distancia\Delphi\Segurator.dproj=C:\Users\Campanelli\Desktop\Aula Distancia\Delphi\uSEGURATOR\Segurator.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

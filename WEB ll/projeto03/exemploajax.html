@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" 
+		src="JS/jquery-3.4.1.min.js">
+			
+		</script>
+		<script>	
+			function enviar(){
+			var dadosForm = $('#dados').serialize();
+			//var é usado para declarar uma variavel global!
+			//serialize inspeciona o formulario e pega todos os campos com nome "name", cria um array automatico e guarda todos os dados.
+			$.ajax({
+				url : "cadastrar.php",
+				type : 'post',
+				data : dadosForm,
+				beforeSend : function(){
+					$("#mensagem").html("ENVIADO...");}
+				})
+			.done(function(dadosRecebidos){
+					$("#mensagem").html(dadosRecebidos);
+				})
+			.fail(function(jqXHR, textStatus, msg){
+				alert(msg);
+			});
+			}
+		</script>
+	</head>	
+	<body>
+		<form id="dados">	
+	  	  <center>
+			<label for="nome">Nome:	</label>
+			<input name="nome"><br><br>
+			<label for="email">Email: </label>
+			<input name="email"><br>
+			<button onclick="enviar(); return false">Enviar</button>
+		  </center>
+		</form>
+		<center> <div id="mensagem"></div> </center>	
+	</body>
+</html>
