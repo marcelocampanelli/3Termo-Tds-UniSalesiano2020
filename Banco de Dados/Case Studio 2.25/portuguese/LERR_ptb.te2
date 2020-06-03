@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<EXPORT>
+<PACKAGE>
+<GUID>{C4F4581E-BB87-425C-B2B4-7F9A648138D0}</GUID>
+<ISPACKAGE>1</ISPACKAGE>
+<NAME>Logical ER Report - RTF - Portuguese(brazilian)</NAME>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<VERSION>1.2.5</VERSION>
+</PACKAGE>
+<DESCRIPTION>
+<![CDATA[Relatório do Modelo Lógico de ER - RTF - Portuguęs(brazileiro)
+-------------------
+The package contains a dictionary of the templates for
+generating of logical entity relationship RTF reports.
+
+It is necessary to also import along with the package :
+- basic dictionary in Portuguese(brazilian) ( Dictionary_ptb.te2 )
+- basic language independent templates for generating of logical
+ entity relationship RTF reports. ( LERR.te2 )]]>
+</DESCRIPTION>
+<SYSTEMTEMPLATES>
+<SERVERS>
+</SERVERS>
+</SYSTEMTEMPLATES>
+<USERTEMPLATES>
+<SERVERS>
+<SYSTEM>
+<TEMPLATES>
+<TEMPLATE>
+<NAME>LERR</NAME>
+<ID>158</ID>
+<GUID>{E2846CEF-5118-11D6-821F-0000B4C1BF01}</GUID>
+<CAPTION>LERR</CAPTION>
+<PACKAGEGUID>{C4F4581E-BB87-425C-B2B4-7F9A648138D0}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function Main()
+{
+	Scripting.LERR_Main.Main();
+};
+
+function DefineVariables()
+{
+	Translator.DefaultLng = 'ptb';
+	Scripting.LERR_Dictionary.ReadVocabulary();
+	Scripting.LERR_Main.DefineVariables();
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>4</CATEGORY>
+<MAINSCRIPT>1</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[JavaScript para gerar documentaçăo do Diagrama de Entidade e Relacionamento, no formato RTF (Rich Text Format) em Portuguęs (brasileiro)!]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.0</VERSION>
+<CREATED><DATE>4/16/2002</DATE><TIME>11:36:37</TIME></CREATED>
+<MODIFIED><DATE>11/7/2002</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+<TEMPLATE>
+<NAME>LERR_Dictionary</NAME>
+<ID>159</ID>
+<GUID>{E2846CEB-5118-11D6-821F-0000B4C1BF01}</GUID>
+<CAPTION>LERR_Dictionary</CAPTION>
+<PACKAGEGUID>{C4F4581E-BB87-425C-B2B4-7F9A648138D0}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function ReadVocabulary()
+{
+Translator.Add( 'LOGICAL_MODEL',		'modelo lógico'			);
+Translator.Add( 'ENTITY_LIST',		'entidades'					);
+Translator.Add( 'ATTRIBUTE_LIST',	'atributos'					);
+Translator.Add( 'ATTRIB_COUNT',		'nş de atributos'			);
+Translator.Add( 'RELSHIP_LIST',		'relacionamentos'			);
+Translator.Add( 'KEY_SUMMARY',		'chaves'						);
+Translator.Add( 'USER_TYPE_SUMMARY','domínios'					);
+Translator.Add( 'PHY_ATTR_PROP',		'propriedades do atributo'			);
+Translator.Add( 'USER_ROLE_SUMMARY','relaçao de funçoes de usuários'	);
+Translator.Add( 'USER_SUMMARY',		'relaçao de usuários'				);
+
+//DefineVariables
+Translator.Add( 'SEL_SUBMODEL',				'Selecionar sub-modelos'					);
+Translator.Add( 'SORT_OBJ_ALPHAB',			'Ordenar objetos alfabeticamente'		);
+Translator.Add( 'USE_REFERENCES',			'Usar referęncias dentro do relatório'	);
+Translator.Add( 'GEN_TITLE',					'Página de título'							);
+Translator.Add( 'GEN_SUM_ENTITIES',			'Sumário de entidades'						);
+Translator.Add( 'GEN_DET_ENTITY',			'Detalhamento da entidade'					);
+Translator.Add( 'GEN_SUM_ATTRIBUTES',		'Sumário de atributos'						);
+Translator.Add( 'GEN_DET_ATTRIBUTE',		'Detalhamento do atributo'					);
+Translator.Add( 'GEN_ATTRS_UNDER_ENTS',	'Atributos na entidade'						);
+Translator.Add( 'GEN_SUM_RELATIONSHIPS',	'Sumário de relacionamentos'				);
+Translator.Add( 'GEN_DET_RELATIONSHIP',	'Detalhamento do relacionamento'			);
+Translator.Add( 'GEN_RELS_UNDER_ENTS',		'Relacionamentos na entidade'				);
+Translator.Add( 'GEN_SUM_KEYS',				'Sumário de chaves'							);
+Translator.Add( 'GEN_DET_KEY',				'Detalhamento da chave'						);
+Translator.Add( 'GEN_DET_PRIMARY_KEY',		'Gerar chaves primárias'					);
+Translator.Add( 'GEN_DET_ALTERNATE_KEY',	'Gerar chaves alternativas'				);
+Translator.Add( 'GEN_SUM_DICTIONARY',		'Sumário de domínios'						);
+Translator.Add( 'GEN_DET_DICTIONARY',		'Detalhamento do domínio'					);
+Translator.Add( 'GEN_DICT_ITEM_USED', 		'Generate used dictionary items only' 	);//
+Translator.Add( 'GEN_SUM_USER_ROLES',		'Gerar sumário de funçoes de usuários'	);
+Translator.Add( 'GEN_DET_USER_ROLE',		'Gerar informaçoes detalhadas de funçoes de usuários');
+Translator.Add( 'GEN_SUM_USERS',				'Gerar sumário de usuários'				);
+Translator.Add( 'GEN_DET_USER',				'Gerar informaçoes detalhadas de usuários');
+Translator.Add( 'GEN_NOTES',					'Gerar notas'									);
+Translator.Add( 'GEN_DESCRIPTIONS',			'Gerar descriçőes'							);
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>4</CATEGORY>
+<MAINSCRIPT>0</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.1</VERSION>
+<CREATED><DATE>4/16/2002</DATE><TIME>11:30:41</TIME></CREATED>
+<MODIFIED><DATE>2/5/2003</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+</TEMPLATES>
+</SYSTEM>
+</SERVERS>
+</USERTEMPLATES>
+<SYSTEMEDITORS>
+<SERVERS>
+</SERVERS>
+</SYSTEMEDITORS>
+<USEREDITORS>
+<SERVERS>
+</SERVERS>
+</USEREDITORS>
+</EXPORT>

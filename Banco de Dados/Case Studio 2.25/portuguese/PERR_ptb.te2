@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<EXPORT>
+<PACKAGE>
+<GUID>{D205EA27-9B4A-430C-9A19-6DE8138A2C5F}</GUID>
+<ISPACKAGE>1</ISPACKAGE>
+<NAME>Physical ER Report - RTF - Portuguese(brazilian)</NAME>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<VERSION>1.0.5</VERSION>
+</PACKAGE>
+<DESCRIPTION>
+<![CDATA[The package contains a dictionary of the templates for
+generating of logical entity relationship RTF reports.
+
+It is necessary to also import along with the package :
+- basic dictionary in Portuguese(brazilian) ( Dictionary_ptb.te2 )
+- basic language independent templates for generating of physical
+ entity relationship RTF reports. ( PERR.te2 )]]>
+</DESCRIPTION>
+<SYSTEMTEMPLATES>
+<SERVERS>
+</SERVERS>
+</SYSTEMTEMPLATES>
+<USERTEMPLATES>
+<SERVERS>
+<SYSTEM>
+<TEMPLATES>
+<TEMPLATE>
+<NAME>PERR</NAME>
+<ID>188</ID>
+<GUID>{FC406705-66B7-4527-91B0-14A49B61BF7E}</GUID>
+<CAPTION>Physical entity relationship report</CAPTION>
+<PACKAGEGUID>{D205EA27-9B4A-430C-9A19-6DE8138A2C5F}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function Main()
+{
+	Scripting.PERR_Main.Main();
+};
+
+function DefineVariables()
+{
+	Translator.DefaultLng = 'ptb';
+	Scripting.PERR_Dictionary.ReadVocabulary();
+	Scripting.PERR_Main.DefineVariables();
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>4</CATEGORY>
+<MAINSCRIPT>1</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.0</VERSION>
+<CREATED><DATE>11/7/2002</DATE><TIME>17:14:28</TIME></CREATED>
+<MODIFIED><DATE>11/7/2002</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+<TEMPLATE>
+<NAME>PERR_Dictionary</NAME>
+<ID>189</ID>
+<GUID>{FB4CD5D4-1B5D-4921-BFBA-6130A73A1D59}</GUID>
+<CAPTION>PERR_Dictionary</CAPTION>
+<PACKAGEGUID>{D205EA27-9B4A-430C-9A19-6DE8138A2C5F}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function ReadVocabulary()
+{
+Translator.Add( 'PHYSICAL_MODEL',			'modelo físico'						);
+Translator.Add( 'TABLE_LIST',					'relaçao de tabelas'					);
+Translator.Add( 'COLUMN_LIST',				'relaçao de colunas'					);
+Translator.Add( 'COLUMN_COUNT',				'# de colunas'							);
+Translator.Add( 'RELSHIP_LIST',				'relacionamentos'						);
+Translator.Add( 'KEY_SUMMARY',				'chaves'									);
+Translator.Add( 'USER_TYPE_SUMMARY',		'domínios'								);
+Translator.Add( 'PHY_ATTR_PROP',				'propriedades do atributo'			);
+Translator.Add( 'INDEX_SUMMARY',				'relaçao de índices'					);
+Translator.Add( 'TRIGGER_SUMMARY',			'relaçao de gatilhos'				);
+Translator.Add( 'PROCEDURE_SUMMARY',		'relaçao de procedimentos'			);
+Translator.Add( 'VIEW_SUMMARY',				'relaçao de visoes'					);
+Translator.Add( 'TEXT_OBJECT_SUMMARY',		'relaçao de objetos-texto'			);
+Translator.Add( 'USER_ROLE_SUMMARY',		'relaçao de funçoes de usuários'	);
+Translator.Add( 'USER_SUMMARY',				'relaçao de usuários'				);
+Translator.Add( 'PRIMARY_KEY_SUMMARY',		'relaçao de chaves primárias'		);
+Translator.Add( 'ALTERNATE_KEY_SUMMARY',	'relaçao de chaves alternativas'	);
+Translator.Add( 'CONST_REL_NAME',		   'nom contrainte (relacionamento)');
+
+// TextObjects - Oracle 9i
+Translator.Add( 'FUNCTIONS',   				'functions'				);
+Translator.Add( 'PACKAGES',   				'packages'				);
+Translator.Add( 'PACK_BODIES',   			'package bodies'		);
+Translator.Add( 'OBJ_TYPES',   				'object types'			);
+Translator.Add( 'OBJ_TYPE_BODIES',			'object type bodies'	);
+
+//DefineVariables
+Translator.Add( 'SEL_SUBMODEL',				'Selecionar sub-modelos'						);
+Translator.Add( 'SORT_OBJ_ALPHAB',			'Ordenar objetos alfabeticamente'			);
+Translator.Add( 'USE_REFERENCES',			'Usar referęncias dentro do relatório'		);
+Translator.Add( 'GEN_TITLE',					'Página de título'								);
+Translator.Add( 'GEN_SUM_TABLES',			'Gerar sumário de tabelas'						);
+Translator.Add( 'GEN_DET_TABLE',				'Gerar informaçoes detalhadas de tabelas'	);
+Translator.Add( 'GEN_SUM_COLUMNS',			'Gerar sumário de colunas'						);
+Translator.Add( 'GEN_DET_COLUMN',			'Gerar informaçoes detalhadas de colunas'	);
+Translator.Add( 'GEN_COLS_UNDER_TABS',		'Gerar sumário de colunas nas tabelas'		);
+Translator.Add( 'GEN_SUM_PRIMARY_KEYS',	'Gerar sumário de chaves primárias'			);
+Translator.Add( 'GEN_DET_PRIMARY_KEY',		'Gerar informaçoes detalhadas de chaves primárias');
+Translator.Add( 'GEN_SUM_ALTERNATE_KEYS',	'Gerar sumário de chaves alternativas'		);
+Translator.Add( 'GEN_DET_ALTERNATE_KEY',	'Gerar informaçoes detalhadas de chaves alternativas');
+Translator.Add( 'GEN_SUM_INDEXES',			'Gerar sumário de índices'						);
+Translator.Add( 'GEN_DET_INDEX',				'Gerar informaçoes detalhadas de índices'	);
+Translator.Add( 'GEN_SUM_DICTIONARY',		'Gerar sumário de domínios'					);
+Translator.Add( 'GEN_DET_DICTIONARY',		'Gerar informaçoes detalhadas de domínios');
+Translator.Add( 'GEN_DICT_ITEM_USED', 		'Generate used dictionary items only' 	);//
+Translator.Add( 'GEN_SUM_TRIGGERS',			'Gerar sumário de gatilhos'					);
+Translator.Add( 'GEN_DET_TRIGGER',			'Gerar informaçoes detalhadas de gatilhos');
+Translator.Add( 'GEN_SUM_PROCEDURES',		'Gerar sumário de procedimentos'				);
+Translator.Add( 'GEN_DET_PROCEDURE',		'Gerar informaçoes detalhadas de procedimentos');
+Translator.Add( 'GEN_SUM_VIEWS',				'Gerar sumário de visoes'						);
+Translator.Add( 'GEN_DET_VIEW',				'Gerar informaçoes detalhadas de visoes'	);
+Translator.Add( 'GEN_SUM_TEXT_OBJECTS',	'Gerar sumário de objetos-texto'				);
+Translator.Add( 'GEN_DET_TEXT_OBJECT',		'Gerar informaçoes detalhadas de objetos-texto');
+Translator.Add( 'GEN_SUM_USER_ROLES',		'Gerar sumário de funçoes de usuários'		);
+Translator.Add( 'GEN_DET_USER_ROLE',		'Gerar informaçoes detalhadas de funçoes de usuários');
+Translator.Add( 'GEN_SUM_USERS',				'Gerar sumário de usuários'					);
+Translator.Add( 'GEN_DET_USER',				'Gerar informaçoes detalhadas de usuários');
+Translator.Add( 'GEN_NOTES',					'Gerar notas'										);
+Translator.Add( 'GEN_DESCRIPTIONS',			'Gerar descriçoes'								);
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>4</CATEGORY>
+<MAINSCRIPT>0</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.0</VERSION>
+<CREATED><DATE>11/7/2002</DATE><TIME>17:14:47</TIME></CREATED>
+<MODIFIED><DATE>2/5/2003</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+</TEMPLATES>
+</SYSTEM>
+</SERVERS>
+</USERTEMPLATES>
+<SYSTEMEDITORS>
+<SERVERS>
+</SERVERS>
+</SYSTEMEDITORS>
+<USEREDITORS>
+<SERVERS>
+</SERVERS>
+</USEREDITORS>
+</EXPORT>

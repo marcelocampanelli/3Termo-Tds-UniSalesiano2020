@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<EXPORT>
+<PACKAGE>
+<GUID>{FC3FA0FF-1CD4-4F05-8373-777B1CE581F1}</GUID>
+<ISPACKAGE>1</ISPACKAGE>
+<NAME>Data Flow Report - HTML - Portuguese(brazilian)</NAME>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<VERSION>1.0.5</VERSION>
+</PACKAGE>
+<DESCRIPTION>
+<![CDATA[The package contains a dictionary of the templates for
+generating of data flow HTML reports.
+
+It is necessary to also import along with the package :
+- basic dictionary in portuguese(brazilian) ( Dictionary_ptb.te2 )
+- basic language independent templates for generating of
+ data flow HTML reports. ( DFH.te2 )]]>
+</DESCRIPTION>
+<SYSTEMTEMPLATES>
+<SERVERS>
+</SERVERS>
+</SYSTEMTEMPLATES>
+<USERTEMPLATES>
+<SERVERS>
+<SYSTEM>
+<TEMPLATES>
+<TEMPLATE>
+<NAME>DFH</NAME>
+<ID>84</ID>
+<GUID>{27F165EE-B9E1-412F-985F-284D4A73B7EB}</GUID>
+<CAPTION>Relatório de fluxo de dados</CAPTION>
+<PACKAGEGUID>{FC3FA0FF-1CD4-4F05-8373-777B1CE581F1}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function Main()
+{
+	Scripting.DFH_Main.Main();
+};
+
+function DefineVariables()
+{
+	Translator.DefaultLng = 'ptb';
+	Scripting.DFH_Dictionary.ReadVocabulary();
+	Scripting.DFH_Main.DefineVariables();
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>3</CATEGORY>
+<MAINSCRIPT>1</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR></AUTHOR>
+<COMPANY></COMPANY>
+<VERSION></VERSION>
+<CREATED><DATE>11/13/2002</DATE><TIME>15:12:52</TIME></CREATED>
+<MODIFIED><DATE>2/4/2003</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+<TEMPLATE>
+<NAME>DFH_Dictionary</NAME>
+<ID>85</ID>
+<GUID>{95BDC444-3935-4ED7-B948-70D939C9859A}</GUID>
+<CAPTION>DFH_Dictionary</CAPTION>
+<PACKAGEGUID>{FC3FA0FF-1CD4-4F05-8373-777B1CE581F1}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function ReadVocabulary()
+{
+Translator.Add( 'PROCESS_TREE',			'árvore de processos'			  	);
+Translator.Add( 'PROCESS_LIST',			'lista de processos' 				);
+Translator.Add( 'PROCESS_DETAILS',		'detalhes do processo'				);
+Translator.Add( 'TERMINATOR_LIST',		'lista de terminadores'				);
+Translator.Add( 'TERMINATOR_DETAILS',	'detalhes do terminador'			);
+Translator.Add( 'DATA_FLOW_LIST',		'lista de fluxos de dados'			);
+Translator.Add( 'DATA_FLOW_DETAILS',	'detalhes do fluxo de dados'		);
+Translator.Add( 'DATA_STORE_LIST',		'lista de depósitos de dados'		);
+Translator.Add( 'DATA_STORE_DETAILS',	'detalhes do depósito de dados'	);
+Translator.Add( 'MAIN_PROCESS',			'processo principal'					);
+Translator.Add( 'LEVEL',					'nível'									);
+Translator.Add( 'REFERENCE_LIST',		'lista de referęncias para o objeto');
+Translator.Add( 'CONNECT_VIA',			'conectado via'						);
+Translator.Add( 'CONNECT_TO',				'conectado a'							);
+Translator.Add( 'OBJ_SOURCE',				'objeto de orígem'					);
+Translator.Add( 'OBJ_DEST',				'objeto de destino'					);
+Translator.Add( 'DATA_FLOW_DIRECT',		'direçăo do fluxo de dados'		);
+Translator.Add( 'SOURCE',					'orígem'									);
+Translator.Add( 'DESTINATION',			'destino'								);
+
+Translator.Add( 'DATA_FLOW_REPORT',		'relatório de fluxo de dados'	);
+Translator.Add( 'VERSION',					'versăo'								);
+Translator.Add( 'FOR_PROJECT',			'do projeto'						);
+Translator.Add( 'CREATED',					'criaçăo'							);
+Translator.Add( 'LAST_MODIFIED',			'modificaçăo'						);
+
+Translator.Add( 'DF_DIAGRAM',				'DFD'									);
+Translator.Add( 'SUBPROCESS_COUNT_SM',	'nş de subproc.'					);
+Translator.Add( 'BASIC_INFO',				'Informaçoes básicas'			);
+Translator.Add( 'STATISTIC_INFO',		'Informaçoes de estatística'	);
+Translator.Add( 'DATA_FLOW_INFO',		'Informaçoes do DFD'				);
+Translator.Add( 'DATAFLOWTABLE',			'tabela de fluxos de dados'	);
+
+//DefineVariables
+Translator.Add( 'SORT_PROC_HIERARCH',		'Ordenar processos hierarquicamente');
+Translator.Add( 'GEN_DFD_INFO',				'Gerar Informaçoes do DFD'				);
+Translator.Add( 'GEN_DF_DIAGRAM',			'Gerar o DFD'								);
+Translator.Add( 'GEN_TREE_PROCESS',			'Árevore de processos'					);
+Translator.Add( 'GEN_SUM_PROCESSES',		'Sumário de processos'					);
+Translator.Add( 'GEN_DET_PROCESS',			'Detalhamento do processo'				);
+Translator.Add( 'GEN_SUM_TERMINATORS',		'Sumário de terminadores'				);
+Translator.Add( 'GEN_DET_TERMINATOR',		'Detalhamento do terminador'			);
+Translator.Add( 'GEN_SUM_DATASTORES',		'Sumário de depósitos de dados'		);
+Translator.Add( 'GEN_DET_DATASTORE',		'Detalhamento do depósito de dados'	);
+Translator.Add( 'GEN_SUM_DATAFLOWS',		'Sumário de fluxos de dados'			);
+Translator.Add( 'GEN_DET_DATAFLOW',			'Detalhamento do fluxo de dados'		);
+Translator.Add( 'GEN_DET_DATAFLOWTABLE',	'Tabela de fluxos de dados'			);
+Translator.Add( 'GEN_DET_DATAFLOWTABLE_NARROW', 'Generate data flow table in columns' );
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>3</CATEGORY>
+<MAINSCRIPT>0</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR></AUTHOR>
+<COMPANY></COMPANY>
+<VERSION></VERSION>
+<CREATED><DATE>11/13/2002</DATE><TIME>15:13:07</TIME></CREATED>
+<MODIFIED><DATE>2/13/2003</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+</TEMPLATES>
+</SYSTEM>
+</SERVERS>
+</USERTEMPLATES>
+<SYSTEMEDITORS>
+<SERVERS>
+</SERVERS>
+</SYSTEMEDITORS>
+<USEREDITORS>
+<SERVERS>
+</SERVERS>
+</USEREDITORS>
+</EXPORT>

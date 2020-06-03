@@ -1,0 +1,62 @@
+----------------------------------------------
+CASE Studio 2 - additional language templates
+----------------------------------------------
+
+
+* Dictionary_xxx.te2 
+--------------------
+Basic dictionary for CASE Studio 2 RTF and HTML reports 
+
+
+* DFH_xxx.te2
+--------------------
+Dictionary for the data flow HTML report.
+
+
+* DFR_xxx.te2
+--------------------
+Dictionary for the data flow RTF report.
+
+
+* LERH_xxx.te2
+--------------------
+Dictionary for the logic entity-relationship HTML report.
+(not available)
+
+
+* LERR_xxx.te2
+--------------------
+Dictionary for the logic entity-relationship RTF report.
+
+
+* PERH_xxx.te2
+--------------------
+Dictionary for the physical entity-relationship HTML report.
+(not available)
+
+
+* PERR_xxx.te2
+--------------------
+Dictionary for the physical entity-relationship RTF report.
+
+
+* TDRH_xxx.te2
+--------------------
+Dictionary for the To-Do list HTML report.
+(not available)
+
+
+* TDRR_xxx.te2
+--------------------
+Dictionary for the To-Do list RTF report.
+(not available)
+
+
+* VCRH_xxx.te2
+--------------------
+Dictionary for the Version Comparison HTML report.
+(not available)
+
+
+# End of File
+

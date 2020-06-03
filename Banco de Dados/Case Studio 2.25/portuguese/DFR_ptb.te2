@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<EXPORT>
+<PACKAGE>
+<GUID>{85889402-4728-46BC-9A1B-10005A70736E}</GUID>
+<ISPACKAGE>1</ISPACKAGE>
+<NAME>Data Flow Report - RTF - Portuguese(brazilian)</NAME>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<VERSION>1.3</VERSION>
+</PACKAGE>
+<DESCRIPTION>
+<![CDATA[Relatório de Fluxo de Dados - RTF - Portuguęs(brazileiro)
+-------------------
+The package contains a dictionary of the templates for
+generating of data flow RTF reports.
+
+It is necessary to also import along with the package :
+- basic dictionary in Portuguese(brazilian) ( Dictionary_ptb.te2 )
+- basic language independent templates for generating of
+ data flow RTF reports. ( DFR.te2 )]]>
+</DESCRIPTION>
+<SYSTEMTEMPLATES>
+<SERVERS>
+</SERVERS>
+</SYSTEMTEMPLATES>
+<USERTEMPLATES>
+<SERVERS>
+<SYSTEM>
+<TEMPLATES>
+<TEMPLATE>
+<NAME>DFR</NAME>
+<ID>129</ID>
+<GUID>{E98858AB-9E47-11D6-A66A-00047592E184}</GUID>
+<CAPTION>Relatório de fluxo de dados</CAPTION>
+<PACKAGEGUID>{85889402-4728-46BC-9A1B-10005A70736E}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function Main()
+{
+	Scripting.DFR_Main.Main();
+};
+
+function DefineVariables()
+{
+	Translator.DefaultLng = 'ptb';
+	Scripting.DFR_Dictionary.ReadVocabulary();
+	Scripting.DFR_Main.DefineVariables();
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>4</CATEGORY>
+<MAINSCRIPT>1</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[JavaScript para gerar documentaçăo do Diagrama de Fluxo de Dados, no formato RTF (Rich Text Format) em Portuguęs (brasileiro)!]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.0</VERSION>
+<CREATED><DATE>7/23/2002</DATE><TIME>15:32:50</TIME></CREATED>
+<MODIFIED><DATE>2/4/2003</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+<TEMPLATE>
+<NAME>DFR_Dictionary</NAME>
+<ID>130</ID>
+<GUID>{E98858AA-9E47-11D6-A66A-00047592E184}</GUID>
+<CAPTION>DFR_Dictionary</CAPTION>
+<PACKAGEGUID>{85889402-4728-46BC-9A1B-10005A70736E}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function ReadVocabulary()
+{
+Translator.Add( 'PROCESS_TREE',			'árvore de processos'			   	);
+Translator.Add( 'PROCESS_LIST',			'lista de processos' 				);
+Translator.Add( 'PROCESS_DETAILS',		'detalhes do processo'				);
+Translator.Add( 'TERMINATOR_LIST',		'lista de terminadores'				);
+Translator.Add( 'TERMINATOR_DETAILS',	'detalhes do terminador'			);
+Translator.Add( 'DATA_FLOW_LIST',		'lista de fluxos de dados'				);
+Translator.Add( 'DATA_FLOW_DETAILS',	'detalhes do fluxo de dados'			);
+Translator.Add( 'DATA_STORE_LIST',		'lista de depósitos de dados'				);
+Translator.Add( 'DATA_STORE_DETAILS',	'detalhes do depósito de dados'			);
+Translator.Add( 'MAIN_PROCESS',			'processo principal'					);
+Translator.Add( 'LEVEL',					'nível'							);
+Translator.Add( 'REFERENCE_LIST',		'lista de referęncias para o objeto');
+Translator.Add( 'CONNECT_VIA',			'conectado via'				);
+Translator.Add( 'CONNECT_TO',				'conectado a'					);
+Translator.Add( 'OBJ_SOURCE',				'objeto de orígem'				);
+Translator.Add( 'OBJ_DEST',				'objeto de destino'			);
+Translator.Add( 'DATA_FLOW_DIRECT',		'direçăo do fluxo de dados'		);
+Translator.Add( 'SOURCE',					'orígem'							);
+Translator.Add( 'DESTINATION',			'destino'					);
+Translator.Add( 'DATAFLOWTABLE',			'tabela de fluxos de dados'	);
+
+Translator.Add( 'DATA_FLOW_REPORT',	'relatório de fluxo de dados'		);
+Translator.Add( 'VERSION',				'versăo'						);
+Translator.Add( 'FOR_PROJECT',		'do projeto'			);
+Translator.Add( 'CREATED',				'criaçăo'					);
+Translator.Add( 'LAST_MODIFIED',		'modificaçăo'				);
+
+//DefineVariables
+Translator.Add( 'USE_REFERENCES',			'Usar referęncias dentro do relatório');
+Translator.Add( 'SORT_PROC_HIERARCH',		'Ordenar processos hierarquicamente');
+Translator.Add( 'GEN_TITLE',					'Página de título'						);
+Translator.Add( 'GEN_TREE_PROCESS',			'Árevore de processos'					);
+Translator.Add( 'GEN_SUM_PROCESSES',		'Sumário de processos'					);
+Translator.Add( 'GEN_DET_PROCESS',			'Detalhamento do processo'				);
+Translator.Add( 'GEN_SUM_TERMINATORS',		'Sumário de terminadores'				);
+Translator.Add( 'GEN_DET_TERMINATOR',		'Detalhamento do terminador'			);
+Translator.Add( 'GEN_SUM_TERMS_UNDER_PROCS','Terminadores no processo'			);
+Translator.Add( 'GEN_SUM_DATASTORES',		'Sumário de depósitos de dados'		);
+Translator.Add( 'GEN_DET_DATASTORE',		'Detalhamento do depósito de dados'	);
+Translator.Add( 'GEN_SUM_DSTORS_UNDER_PROCS','Depósitos de dados no processo'	);
+Translator.Add( 'GEN_SUM_DATAFLOWS',		'Sumário de fluxos de dados'			);
+Translator.Add( 'GEN_DET_DATAFLOW',			'Detalhamento do fluxo de dados'		);
+Translator.Add( 'GEN_SUM_DFLOWS_UNDER_PROCS','Fluxos de dados no processo'		);
+Translator.Add( 'GEN_DET_DATAFLOWTABLE',	'Tabela de fluxos de dados'			);
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>4</CATEGORY>
+<MAINSCRIPT>0</MAINSCRIPT>
+<EVENTSCRIPTTYPE>0</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.1</VERSION>
+<CREATED><DATE>7/23/2002</DATE><TIME>15:27:49</TIME></CREATED>
+<MODIFIED><DATE>2/12/2003</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+</TEMPLATES>
+</SYSTEM>
+</SERVERS>
+</USERTEMPLATES>
+<SYSTEMEDITORS>
+<SERVERS>
+</SERVERS>
+</SYSTEMEDITORS>
+<USEREDITORS>
+<SERVERS>
+</SERVERS>
+</USEREDITORS>
+</EXPORT>

@@ -1,0 +1,9 @@
+Esse tutorial é para transformar os arquivos em html e rtf e word em português.
+Para isso vc precisa instalar o case studio 2.25 (anexo no arquivo casestudio.zip)
+
+Abra o case studio vá no menu Model-->Edit Templates.
+Na janela Tempaltes Editor vá no menu Templates>Import templates.
+Na Janela Tem,plates and variables import clique no icone amarelo e loade 1 arquivo por vez
+que se encontra na pastar portuguese que esta compactado no arquivo (casestudio.zip).
+Quando vc selecionar o arquivo vai ter um icone verde precione ele para o programa 
+carregar ele faça isso com os 5 arquivos.

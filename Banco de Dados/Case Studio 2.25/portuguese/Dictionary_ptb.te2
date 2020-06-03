@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<EXPORT>
+<PACKAGE>
+<GUID>{644555DC-3D20-4FEC-9982-A7F08819A943}</GUID>
+<ISPACKAGE>1</ISPACKAGE>
+<NAME>Basic Portuguese(brazilian) dictionary</NAME>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<VERSION>1.2</VERSION>
+</PACKAGE>
+<DESCRIPTION>
+<![CDATA[Dicionário Básico Portuguęs(brasileiro).
+
+The package contains a basic portuguese(brazilian) dictionary for generating of reports.]]>
+</DESCRIPTION>
+<SYSTEMTEMPLATES>
+<SERVERS>
+</SERVERS>
+</SYSTEMTEMPLATES>
+<USERTEMPLATES>
+<SERVERS>
+<SYSTEM>
+<TEMPLATES>
+<TEMPLATE>
+<NAME>Dictionary</NAME>
+<ID>208</ID>
+<GUID>{26531F08-512F-11D6-821F-0000B4C1BF01}</GUID>
+<CAPTION>Dictionary</CAPTION>
+<PACKAGEGUID>{644555DC-3D20-4FEC-9982-A7F08819A943}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function ReadVocabulary()
+{
+// common
+Translator.Add( 'YES',					'sim' 						);
+Translator.Add( 'NO',					'năo'		 					);
+Translator.Add( 'TYPE',					'tipo'		 				);
+Translator.Add( 'DONE',					'feito'	 					);
+Translator.Add( 'NAME',					'nome'	 					);
+Translator.Add( 'OTHERS',				'outros'		 				);
+Translator.Add( 'PARENT',				'mestre'						);
+Translator.Add( 'CHILD',				'filha'						);
+Translator.Add( 'EXTERNAL',			'externo'					);
+Translator.Add( 'OBJECT',				'objeto'						);
+Translator.Add( 'OBJECT_NAME',		'nome do objeto'			);
+Translator.Add( 'OBJECT_TYPE',		'tipo do objeto'			);
+Translator.Add( 'TEXT',					'texto'						);
+Translator.Add( 'DATE',					'data'						);
+
+// tables
+Translator.Add( 'TABLE',   			'tabela'						);
+Translator.Add( 'TABLES',				'tabelas'					);
+Translator.Add( 'TABLE_NAME',			'nome da tabela'			);
+Translator.Add( 'TABLE_TYPE', 		'tipo da tabela'			);
+Translator.Add( 'PARENT_TABLE',		'mestre'						);
+Translator.Add( 'CHILD_TABLE',		'filha'						);
+
+// entities
+Translator.Add( 'ENTITY',				'entidade' 					);
+Translator.Add( 'ENTITIES',			'entidades'					);
+Translator.Add( 'ENTITY_NAME',		'nome da entidade'		);
+Translator.Add( 'ENTITY_TYPE',		'tipo'						);
+Translator.Add( 'DEPENDENT',			'Forte'						);
+Translator.Add( 'INDEPENDENT',		'Fraca'						);
+Translator.Add( 'PARENT_ENTITY',		'mestre'						);
+Translator.Add( 'CHILD_ENTITY',		'filha'						);
+
+// columns
+Translator.Add( 'COLUMN',				'coluna'						);
+Translator.Add( 'COLUMNS',				'colunas'	 				);
+Translator.Add( 'COLUMN_NAME',		'nome da coluna' 			);
+Translator.Add( 'COLUMN_NAMES',		'nomes da coluna' 		);
+Translator.Add( 'DOMAIN',				'domínio'		 			);
+
+// atributes
+Translator.Add( 'ATTRIBUTE',			'atributo' 					);
+Translator.Add( 'ATTRIBUTES',			'atributos' 				);
+Translator.Add( 'ATTRIBUTE_NAME',	'nome do atributo'		);
+Translator.Add( 'ROLE_NAME',			'funçăo'						);
+Translator.Add( 'ATTR_ROLENAME',		'nome/funçăo'				);
+
+// relationships
+Translator.Add( 'RELATIONSHIP',		'relacionamento' 			);
+Translator.Add( 'RELATIONSHIPS',		'relacionamentos' 		);
+Translator.Add( 'RELSHIP_NAME',		'nome do relacionamento');
+Translator.Add( 'RELSHIP_TYPE',		'tipe' 						);
+Translator.Add( 'IDENTIFYING',		'identificado'				);
+Translator.Add( 'NON_IDENTIFYING',	'năo-identificado'		);
+Translator.Add( 'INFORMATIVE',		'informativo'				);
+Translator.Add( 'EXISTENCE',			'parcialidade'				); 
+Translator.Add( 'PARTIALITY_PARENT','mestre'						); 
+Translator.Add( 'PARTIALITY_CHILD', 'filha'   					); 
+Translator.Add( 'MANDATORY',			'obrigatoriedade' 		);
+Translator.Add( 'OPTIONAL',			'opcional'					);
+Translator.Add( 'CARDINALITY',		'cardinality'				);
+Translator.Add( 'CARDINALITY_S',		'card.'						);
+
+// referential integrity
+Translator.Add( 'REFER_INTEGRITY',  'integridade referencial'	);
+Translator.Add( 'R_INT_NONE',    	'nenhuma'						);
+Translator.Add( 'R_INT_SET_NULL',	'difinir nulo'					);
+Translator.Add( 'R_INT_RESTRICT',	'restringir'					);
+Translator.Add( 'R_INT_CASCADE',		'cascata'						);
+Translator.Add( 'R_INT_SET_DEF',		'definir padrăo'				);
+Translator.Add( 'R_INT_INSERT',		'inserçăo'						);
+Translator.Add( 'R_INT_UPDATE',		'atualizaçăo'					);
+Translator.Add( 'R_INT_DELETE',		'exclusăo'						);
+
+// indexes
+Translator.Add( 'INDEX',				'índice'	 					);
+Translator.Add( 'INDEXES',				'índices'	 				);
+Translator.Add( 'INDEX_NAME',			'nome do índice'			);
+Translator.Add( 'INDEX_ITEMS',		'itens'						);
+Translator.Add( 'DESCENDING',			'descendente'				);
+Translator.Add( 'CLUSTERED',			'agrupado'					);
+Translator.Add( 'CASE_SENSITIVE',	'sensível mai/min'		);
+Translator.Add( 'EXPRESSION',			'expressăo'					);
+Translator.Add( 'FILTER',				'filtro'						);
+
+// keys
+Translator.Add( 'KEY',					'chave'						);
+Translator.Add( 'KEYS',					'chaves'						);
+Translator.Add( 'KEY_NAME',			'nome da chave'			);
+Translator.Add( 'KEY_TYPE',			'tipo'						);
+Translator.Add( 'PK',					'PK'							);
+Translator.Add( 'FK',					'FK'							);
+Translator.Add( 'PFK',					'PFK'							);
+Translator.Add( 'PRIMARY_KEY',		'chave primária'			);
+Translator.Add( 'PRIMARY_KEYS',		'chaves primárias'	 	);
+Translator.Add( 'FOREIGN_KEY',		'chave estrangeira'		);
+Translator.Add( 'FOREIGN_KEYS',		'chaves estrangeiras'	);
+Translator.Add( 'PARENT_KEY',			'mestre'	 					);
+Translator.Add( 'CHILD_KEY',			'filha'						);
+Translator.Add( 'UNIQUE_ATTR',		'único'						);
+Translator.Add( 'UNIQUE_COL',			'único'						);
+
+// alternative keys
+Translator.Add( 'ALTERNATE_KEY',		'chave alternativa'		);
+Translator.Add( 'ALTERNATE_KEYS',	'chaves alternativas'	);
+
+// data dictionary
+Translator.Add( 'DATA_DICTIONARY',	'dicionário de dados'	);
+Translator.Add( 'USER_TYPES',			'domínios'					);
+Translator.Add( 'USER_TYPE',			'domínio'					);
+Translator.Add( 'USER_TYPE_NAME',	'nome do domínio' 		);
+Translator.Add( 'USER_ROLES',			'funçăo'	 					);
+
+// user permissions
+Translator.Add( 'USER',					'usuário'					);
+Translator.Add( 'USERS',				'usuários'			 		);
+Translator.Add( 'USER_ROLE',			'funçao do usuário'		);
+Translator.Add( 'USER_ROLES',			'funçőes'	 				);
+Translator.Add( 'PERMISSIONS',		'permissőes'	 			);
+Translator.Add( 'USER_NAME',			'nome do usuário'			);
+Translator.Add( 'USER_ROLE_NAME',	'nome da funçao do usuário');
+
+Translator.Add( 'P_SELECT',			'select'		 				);
+Translator.Add( 'P_INSERT',			'insert'		 				);
+Translator.Add( 'P_UPDATE',			'update'		 				);
+Translator.Add( 'P_DELETE',			'delete'		 				);
+Translator.Add( 'P_EXECUTE',			'execute'		 			);
+Translator.Add( 'P_DRI',				'DRI'			 				);
+
+// others
+Translator.Add( 'DATA_TYPE',			'tipo de dado'				);
+Translator.Add( 'LENGTH',				'tamanho'					);
+Translator.Add( 'DECIMAL',				'decimal'					);
+
+Translator.Add( 'TRIGGER',				'gatilho'					);
+Translator.Add( 'TRIGGERS',			'gatilhos'					);
+Translator.Add( 'TRIG_ENTITY',		'gatilhos das entidades');				
+Translator.Add( 'TRIG_USER',			'gatilhos do usuário'	);
+Translator.Add( 'TRIGGER_NAME',		'nome no gatilho'			);
+Translator.Add( 'VIEW',					'visăo'						);
+Translator.Add( 'VIEWS',				'visőes'						);
+Translator.Add( 'VIEW_NAME',			'nome da visao' 			);
+Translator.Add( 'PROCEDURE',			'procedimento'				);
+Translator.Add( 'PROCEDURES',			'procedimentos'			);
+Translator.Add( 'PROCEDURE_NAME',	'nome do procedimento'	);
+Translator.Add( 'TEXT_OBJECT',   	'objeto-texto'				);
+Translator.Add( 'TEXT_OBJECTS',   	'objetos-texto'			);
+Translator.Add( 'TEXT_OBJECT_NAME',	'nome do objeto-texto'	);
+Translator.Add( 'TEXT_OBJECT_TYPE',	'tipo do objeto-texto'	);
+
+Translator.Add( 'MODEL',				'modelo'						);
+Translator.Add( 'CONSTRAINT',			'constrangimento'			);
+Translator.Add( 'CONSTRAINTS',		'constrangimentos'		);
+Translator.Add( 'CONSTRAINT_NAME',	'nome da restriçăo'		);
+Translator.Add( 'STORAGE',				'armazenamento'			);
+Translator.Add( 'DESCRIPTION',		'descriçăo'					);
+Translator.Add( 'NOTES',				'notas'						);
+Translator.Add( 'VM_NOTES',			'notas do VM'				);
+Translator.Add( 'RESTRICTIONS',		'restriçőes'				);
+Translator.Add( 'USAGE',				'usado em'					);
+Translator.Add( 'CHECK',				'checagem'					);
+Translator.Add( 'CHECK_C_NAME',		'nome para checagem'		);
+Translator.Add( 'DEFAULT',				'padrăo'						);
+Translator.Add( 'DEFAULT_C_NAME',	'nome para padrăo' 		);
+Translator.Add( 'UNIQUE',				'único'						);
+Translator.Add( 'UNIQUE_C_NAME',		'nome para único' 		);
+Translator.Add( 'NOT_NULL',			'năo-nulo'					);
+Translator.Add( 'DEF',					'definiçăo'					);
+Translator.Add( 'DEF2',					'definiçăo2'				);
+Translator.Add( 'GENERATE',			'gerar'						);
+Translator.Add( 'UDEF_VARS',			'variáveis definidas pelo usuário');
+Translator.Add( 'VALUE',				'valor'						);
+Translator.Add( 'OTHER_SQL',			'outro script SQL'		);
+
+// data flow models
+Translator.Add( 'PROCESS',				'processo'					);	
+Translator.Add( 'PROCESSES',			'processos'					);
+Translator.Add( 'DATA_FLOW',			'fluxo de dados'			);	
+Translator.Add( 'DATA_FLOWS',			'fluxos de dados'			);	
+Translator.Add( 'DATA_STORE',			'depósito de dados'		);	
+Translator.Add( 'DATA_STORES',		'depósitos de dados'		);	
+Translator.Add( 'TERMINATOR',			'terminador'				);	
+Translator.Add( 'TERMINATORS',		'terminadores'				);
+
+// process
+Translator.Add( 'PROCESS_NO',			'número'						);
+Translator.Add( 'PROCESS_NAME',		'nome do processo' 		);
+Translator.Add( 'LOWEST_LEVEL',		'nível mínimo'		 		);
+Translator.Add( 'SUBPROCESS_COUNT',	'nş de subprocessos'		);
+Translator.Add( 'SPECIFICATION',		'especificaçăo'			);
+
+// terminators
+Translator.Add( 'TERMINATOR_NAME',	'nome do terminador'		);
+
+// data stores
+Translator.Add( 'DATA_STORE_NAME',	'nome do depósito de dados'	);
+
+// data flows
+Translator.Add( 'DATA_FLOW_NAME',	'nome do fluxo de dados'		);
+Translator.Add( 'T_DATA_FLOW',		'fluxo de dados'					);		// type
+Translator.Add( 'T_CONTROL_FLOW',	'fluxo de controle'				);		// type
+
+// To-Do list
+Translator.Add( 'CATEGORY',			'categoria'					);
+Translator.Add( 'GENERAL_INFO',		'informaçăo geral'		);
+Translator.Add( 'TO_DO_LIST',			'lista para-fazer'		);
+Translator.Add( 'PRIORITY',			'prioridade'				);
+Translator.Add( 'OWNER',				'responsável'				);
+
+// basic info/RTF
+Translator.Add( 'PROJECT',				'projeto'					);
+Translator.Add( 'SUBMODEL',			'submodelo'					);
+Translator.Add( 'VERSION',				'versăo'						);
+Translator.Add( 'AUTHOR',				'autor'						);
+Translator.Add( 'CREATED',				'criaçăo'					);
+Translator.Add( 'LAST_MODIFIED',		'modificaçăo'				);
+Translator.Add( 'FOR_PROJECT',		'do projeto'				);
+
+}
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>1</CATEGORY>
+<MAINSCRIPT>0</MAINSCRIPT>
+<EVENTSCRIPTTYPE>1</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.1</VERSION>
+<CREATED><DATE>4/16/2002</DATE><TIME>11:47:08</TIME></CREATED>
+<MODIFIED><DATE>12/9/2002</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+<TEMPLATE>
+<NAME>LngSpec</NAME>
+<ID>209</ID>
+<GUID>{26531F09-512F-11D6-821F-0000B4C1BF01}</GUID>
+<CAPTION>LngSpec</CAPTION>
+<PACKAGEGUID>{644555DC-3D20-4FEC-9982-A7F08819A943}</PACKAGEGUID>
+<ENABLED>1</ENABLED>
+<LEVEL>1</LEVEL>
+<IDPARENT>0</IDPARENT>
+<VALUE><![CDATA[function SetHTMLLngSpecifications()
+{
+HTML.CharacterSet	= 'iso-8859-1'; 
+};
+
+function SetRTFLngSpecifications()
+{
+Rtf.LanguageId    = '0416';
+Rtf.CodePage      = '850';
+Rtf.CharacterSet  = '0';
+};
+]]></VALUE>
+<LANGUAGE>1</LANGUAGE>
+<LANGUAGEWIN>PTB</LANGUAGEWIN>
+<CATEGORY>1</CATEGORY>
+<MAINSCRIPT>0</MAINSCRIPT>
+<EVENTSCRIPTTYPE>1</EVENTSCRIPTTYPE>
+<DESCRIPTION><![CDATA[]]></DESCRIPTION>
+<AUTHOR>Macilon Araújo Costa Neto</AUTHOR>
+<COMPANY>Ministério Público do Estado do Acre</COMPANY>
+<VERSION>1.0</VERSION>
+<CREATED><DATE>4/16/2002</DATE><TIME>12:09:41</TIME></CREATED>
+<MODIFIED><DATE>11/22/2002</DATE><TIME>0:00:00</TIME></MODIFIED>
+</TEMPLATE>
+</TEMPLATES>
+</SYSTEM>
+</SERVERS>
+</USERTEMPLATES>
+<SYSTEMEDITORS>
+<SERVERS>
+</SERVERS>
+</SYSTEMEDITORS>
+<USEREDITORS>
+<SERVERS>
+</SERVERS>
+</USEREDITORS>
+</EXPORT>

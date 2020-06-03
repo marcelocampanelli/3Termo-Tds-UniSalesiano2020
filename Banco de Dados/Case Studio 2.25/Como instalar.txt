@@ -1,0 +1,13 @@
+Para eu mandar essa versão para vcs tive que renomear para cs2_setup.ex_ pois os e-mails
+atualmente ñ estão aceitando arquivos .exe intão vcs deveram mudar o nome do arquivo para
+cs2_setup.exe caso no seu windows ñ tiver aparecendo .ex_ e vc ñ souber como faz para aparece
+vc deve abrir meu computador ou windows explorer ir no menu Ferramentas-->Opções de pasta.
+Ai selecione o menu Modo de exibição nessa tela desmarque o "V" verde da caixa Ocultar as extensões 
+dos tipos de arquivo conhecidos selecione ok e pronto .
+Agora eh soh clicar em cima do arquivo precionar f2 e renomea-lo.
+Após a instalação abre o programa selecione load license va na pasta licença e loade aquele arquivo.
+Pronto agora vc tem case studio full registrado faça bom proveito.
+Para instalar os arquivos de word e html em portugues sigam o arquivo Dicas para instalação.txt
+dentro da pastta portuguese.
+
+Developed and produced for  Marcus Vinicius Volkweis.
