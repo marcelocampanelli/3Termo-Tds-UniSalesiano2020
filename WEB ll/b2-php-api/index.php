@@ -20,42 +20,43 @@
           $ch  = curl_init($url);
           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        
           // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
           $resultado = json_decode(curl_exec($ch));
-
           // var_dump($resultado);
-
+          
           foreach($resultado as $resp){
-
             // var_dump($resp);
-            
             ?>
 
             <div class="box">
               <?php
+            
               echo "<b>Nome: "                    . $resp->name        . "<br></b>";
-              echo "Conversão para: "                     . $resp->codein      . "<br>";
-              echo "Cotação<b>: R$ "                 . $resp->high        . "<br></b>";
+              echo "Conversão para: "             . $resp->codein      . "<br>";
+              echo "Cotação<b>: R$ "              . $resp->high        . "<br></b>";
               echo "Horario da Cotação: "         . $resp->create_date . "<br>";
+            
+              $dados[] = "Nome: "                    . $resp->name           . " \n" ;
+              $dados[] = "Conversão para: "          . $resp->codein         . " \n" ;
+              $dados[] = "Cotação: R$ "              . $resp->high           . " \n" ;
+              $dados[] = "Horario da Cotação: "      . $resp->create_date    . " \n" ;
+              $dados[] = "\n ------------------------------------------------ \n" ;
+            
+              file_put_contents("dadosApi.txt", $dados);
+              
               ?>
             </div>
 
             <?php
- 
-            
-
+              
           }
-          
-
         ?>
-      
-
-        
 
     </div>
           <div class="clear"></div>
     <footer>
-    <b>@AUTHOR: MARCELO CAMPANELLI</b>  -- Fornecedor da Cotações https://economia.awesomeapi.com.br/ -- 
+    <b>@AUTHOR: MARCELO CAMPANELLI</b>  -- Fornecedor das Cotações docs.awesomeapi.com.br/api-de-moedas --
     </footer>
 
 </body>

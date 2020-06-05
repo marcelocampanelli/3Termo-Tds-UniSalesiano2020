@@ -1,0 +1,90 @@
+Nome: Dólar Comercial 
+Conversão para: BRL 
+Cotação: R$ 5.12 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
+Nome: Dólar Turismo 
+Conversão para: BRLT 
+Cotação: R$ 5.1 
+Horario da Cotação: 2020-06-05 11:24:00 
+
+ ------------------------------------------------ 
+Nome: Dólar Canadense 
+Conversão para: BRL 
+Cotação: R$ 3.8091 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
+Nome: Euro 
+Conversão para: BRL 
+Cotação: R$ 5.8271 
+Horario da Cotação: 2020-06-05 11:25:00 
+
+ ------------------------------------------------ 
+Nome: Libra Esterlina 
+Conversão para: BRL 
+Cotação: R$ 6.4943 
+Horario da Cotação: 2020-06-05 11:25:00 
+
+ ------------------------------------------------ 
+Nome: Peso Argentino 
+Conversão para: BRL 
+Cotação: R$ 0.0744 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
+Nome: Bitcoin 
+Conversão para: BRL 
+Cotação: R$ 50790 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
+Nome: Litecoin 
+Conversão para: BRL 
+Cotação: R$ 244.99 
+Horario da Cotação: 2020-06-05 11:24:16 
+
+ ------------------------------------------------ 
+Nome: Iene Japonês 
+Conversão para: BRL 
+Cotação: R$ 0.04694 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
+Nome: Franco Suíço 
+Conversão para: BRL 
+Cotação: R$ 5.3643 
+Horario da Cotação: 2020-06-05 11:25:00 
+
+ ------------------------------------------------ 
+Nome: Dólar Australiano 
+Conversão para: BRL 
+Cotação: R$ 3.5899 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
+Nome: Yuan Chinês 
+Conversão para: BRL 
+Cotação: R$ 0.7228 
+Horario da Cotação: 2020-06-05 11:24:08 
+
+ ------------------------------------------------ 
+Nome: Novo Shekel Israelense 
+Conversão para: BRL 
+Cotação: R$ 1.4875 
+Horario da Cotação: 2020-06-05 11:24:13 
+
+ ------------------------------------------------ 
+Nome: Ethereum 
+Conversão para: BRL 
+Cotação: R$ 6498.97 
+Horario da Cotação: 2020-06-04 23:08:54 
+
+ ------------------------------------------------ 
+Nome: Ripple 
+Conversão para: BRL 
+Cotação: R$ 1.09 
+Horario da Cotação: 2020-06-05 11:25:03 
+
+ ------------------------------------------------ 
